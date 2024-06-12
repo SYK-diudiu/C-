@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        int index = s.size() - 1;
+
+        while (s[index] == ' ') {
+            index--;
+        }
+        int wordLength = 0;
+        while (index >= 0 && s[index] != ' ') {
+            wordLength++;
+            index--;
+        }
+
+        return wordLength;
+    }
+};
+
+作者：力扣官方题解
+链接：https://leetcode.cn/problems/length-of-last-word/solutions/1008504/zui-hou-yi-ge-dan-ci-de-chang-du-by-leet-51ih/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

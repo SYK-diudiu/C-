@@ -1,0 +1,17 @@
+class Solution 
+{
+public:
+    int removeDuplicates(vector<int>& nums) 
+    {
+        int k = 0;
+        set<int> num(nums.begin() , nums.end());
+        k = num.size();
+        vector<int>::iterator viter = nums.begin();
+        set<int>::iterator siter = num.begin();
+        for( ; siter != num.end() ; ++siter , ++viter)
+        {
+            *viter = *siter;
+        }
+        return k;
+    }
+};

@@ -1,0 +1,39 @@
+class Solution 
+{
+public:
+    string addBinary(string a, string b)
+    {
+        int a_ten = two_to_ten_num(a);
+        int b_ten = two_to_ten_num(b);
+        int sum = a_ten + b_ten;
+        int shang = sum;
+        int yu = 0;
+        //int location = weishu(sum);
+        //if(location < 0)
+        //    return a;
+        string result;
+        for( ; shang > 0 ; shang = (int)(shang/2))
+        {
+            yu = shang % 2;
+            result.push_back(yu + '0');
+        }
+        return result;
+    }
+    int two_to_ten_num(string &temp)
+    {
+        int sum = 0;
+        for(int i = temp.length() ; i > 0; --i)
+        {
+            sum += temp[i-1] * pow(2 , temp.length() - i);
+        }
+        return sum;
+    }
+    int weishu(int flag)
+    {
+        for(int i = 0; flag < pow(2 , i) ; ++i)
+        {
+            return i;
+        }
+        return -1;
+    }
+};
